@@ -1,0 +1,18 @@
+<div class="description">
+  <p>Enter text to the input field to add items to your list</p>
+  <p>click the "x" to remove the item form your list</p>
+  <p>click the item to mark it as complete</p>
+
+  <div class="inputForm">
+    <input type="text" class="form-control todoInput" placeholder="Input to do" (keyup.enter)="addTodo()" [(ngModel)]="todoText" >
+    <div class="plus-icon" (click)="addTodo()">
+      <i class="fas fa-plus plusFont"></i>
+    </div>
+  </div>
+  <div class="listTodo">
+    <div class="oneTodo" *ngFor="let todo of listTodo;let i = index" [class.todoDone]="todo.done" (click)="todo.done = !todo.done"> {{todo.text}} 
+      {{ todo.done ? ' (completed) ' : '' }}
+      <i class="fas fa-times remove" (click)="removeTodo(i)" ></i>
+    </div>
+  </div>
+</div>

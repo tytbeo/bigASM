@@ -1,0 +1,65 @@
+.description{
+    margin-top: 2rem;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputForm{
+    max-width: 500px;
+    display: inline-flex;
+
+    .todoInput{
+        max-width: 400px;
+        width: 350px;
+    }
+
+    .plus-icon {
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        margin-left: 10px;
+        border: 3px solid #8b8bf1;
+        border-radius: 50%;    
+        color: #8b8bf1;
+        cursor: pointer;
+    }
+
+}
+.listTodo{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    .oneTodo{
+        min-width: 250px;
+        border-radius: 4px;
+        border: 1px solid #8b8bf1;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 5px;
+        display: inline-flex;
+        cursor: pointer;
+        background-color: #b2b2ff38;
+        justify-content: space-between;
+        transition: 0.2s;
+        margin-bottom: 10px;
+        &:hover{
+            background-color: #4a4aec47;
+        }
+        .remove {
+            line-height: 40px;
+            font-size: 22px;
+            width: 30px;
+            text-align: center;
+        }
+    }
+}
+.todoDone{
+    border: 1px solid #51f2a4c7 !important;
+    background-color: #c3ffc43b !important;
+    &:hover{
+        background-color: #c3ffc48f !important;
+    }
+}
