@@ -93,7 +93,7 @@ export class FaTubeHomeComponent implements OnInit {
 
   }
 
-  openModal(template: TemplateRef<any>, link) {
+  openModal(template: TemplateRef<any>, link?) {
     this.currentYoutubeLink = link;
     this.modalRef = this.modalService.show(template);
   }

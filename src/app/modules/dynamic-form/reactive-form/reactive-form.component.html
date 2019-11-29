@@ -9,14 +9,14 @@
                         <div class="d-flex">
                             <label for="name" >Name</label>
                             <input type="text" class="form-control" formControlName="name"  placeholder="Name" required
-                            [ngClass]="{ 'is-invalid': form.name.touched && form.name.invalid }" />
+                            [ngClass]="{ 'is-invalid': contactUs.get('name').touched && contactUs.get('name').invalid }" />
                         </div>
-                        <div *ngIf="form.name?.touched || submited" class="error">
-                            <div *ngIf="form.name.errors.required">Name is required</div>
+                        <div *ngIf="contactUs.get('name').touched || submited" class="error">
+                            <div *ngIf="contactUs.get('name')['errors'].required">Name is required</div>
                         </div>
                     </div>
 
-                    <div formArrayName="emails" class="form-group" *ngFor="let email of form.emails?.controls;let i = index" >
+                    <div formArrayName="emails" class="form-group" *ngFor="let email of contactUs.get('emails')['controls'];let i = index" >
                         <div class="d-flex">
                             <label [for]="i" >{{ i == 0 ? 'Your E-mail' : ''}}</label>
                             <input type="text" class="form-control" placeholder="Your E-mail"
@@ -31,7 +31,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group" formArrayName="phones" *ngFor="let phone of form.phones?.controls;let i = index">
+                    <div class="form-group" formArrayName="phones" *ngFor="let phone of contactUs.get('phones')['controls'];let i = index">
                         <div class="d-flex"> 
                             <label [for]="i">{{ i == 0 ? 'Your Phone' : ''}}</label>
                             <input type="text" class="form-control" [formControlName]="i" placeholder="Your Phone"
@@ -52,11 +52,11 @@
                             <label for="message">Your message</label>
                             <textarea type="text" class="form-control" formControlName="message" 
                             placeholder="please enter your message here..." 
-                            [ngClass]="{ 'is-invalid': form.message.touched && form.message.invalid }" ></textarea>
+                            [ngClass]="{ 'is-invalid': contactUs.get('message').touched && contactUs.get('message').invalid }" ></textarea>
                         </div>
                        
-                        <div *ngIf="form.message.touched || submited" class="error">
-                            <div *ngIf="form.message.errors.required">message is required</div>
+                        <div *ngIf="contactUs.get('message').touched || submited" class="error">
+                            <div *ngIf="contactUs.get('message')['errors'].required">message is required</div>
                         </div>
                     </div>
                     <div class="form-group">

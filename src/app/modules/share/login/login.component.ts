@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   emailName : string;
 
-  constructor( private MailS : EmailService,
+  constructor( public MailS : EmailService,
     private router : Router ) { }
 
   ngOnInit() {
