@@ -1,0 +1,4 @@
+<div class="listTodo">
+    <app-item-todo *ngFor="let todo of listTodo;let i = index" 
+    [todo]="todo" [index]="i" (passIdx)="removeTodo($event)" ></app-item-todo>
+</div>

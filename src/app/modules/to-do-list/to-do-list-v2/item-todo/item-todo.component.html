@@ -1,0 +1,5 @@
+<div class="oneTodo" [class.todoDone]="todo.done"
+  (click)="todo.done = !todo.done"> {{todo.text}}
+  {{ todo.done ? ' (completed) ' : '' }}
+  <i class="fas fa-times remove" (click)="passIdx.emit(index)"></i>
+</div>

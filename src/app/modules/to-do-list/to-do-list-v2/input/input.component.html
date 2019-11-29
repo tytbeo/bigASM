@@ -1,0 +1,7 @@
+<div class="inputForm">
+  <input type="text" class="form-control todoInput" placeholder="Input to do" (keyup.enter)="addTodo()"
+    [(ngModel)]="todoText">
+  <div class="plus-icon" (click)="addTodo()">
+    <i class="fas fa-plus plusFont"></i>
+  </div>
+</div>

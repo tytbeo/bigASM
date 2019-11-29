@@ -1,0 +1,13 @@
+<div id="login">
+  <h1>Log In</h1>
+  <small>(This login screen is for demonstration only... just pick a username)</small>
+  <div class="hrStrike"></div>  
+  <label for="email"> Username: </label>
+  <select name="email" class="form-control" [(ngModel)]="emailName" >
+    <option [value]="mail" *ngFor="let mail of MailS?.listUser" > {{mail}} </option>
+  </select>
+  <div class="hrStrike"></div>
+  <div (click)="changeAccount()" class="btn btn-primary submitBtn">
+    Login
+  </div>
+</div>

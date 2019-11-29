@@ -1,3 +1,8 @@
-<p>
-  to-do-list-v2 works!
-</p>
+<div class="description">
+  <p>Enter text to the input field to add items to your list</p>
+  <p>click the "x" to remove the item form your list</p>
+  <p>click the item to mark it as complete</p>
+
+  <app-input (transferData)="addTodo($event)"></app-input>
+  <app-list-todo [listTodo]="listTodo"></app-list-todo>
+</div>

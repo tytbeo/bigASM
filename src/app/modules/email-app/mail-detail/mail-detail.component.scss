@@ -1,0 +1,35 @@
+#detail{
+    margin-top: 3px;
+
+    .bodyDetail{
+        padding: 15px 25px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+
+    .headDetail{
+        display: flex;
+        justify-content: space-between;
+        background-color: #b1b1b1;
+        padding: 16px 30px;
+        font-size: 14px;
+
+        .right{
+            .date{
+                font-size: 15x;
+            }
+            .buttonOpts{
+                padding: 8px 12px;
+                color: white;
+                background-color: #337ab7;
+                border-radius: 5px;
+                margin-right: 3px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #24547e;
+                }
+            }
+        }
+    }
+}

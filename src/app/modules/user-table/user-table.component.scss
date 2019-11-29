@@ -1,0 +1,15 @@
+.table{
+    td{
+        font-weight: 500 !important;
+    }
+}
+.orderForm{
+    display: flex;
+    margin-bottom: 2rem;
+    
+    select{
+        max-width: 250px;
+        margin-left: 1rem;
+    }
+    
+}

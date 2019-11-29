@@ -1,0 +1,95 @@
+.headerMailApp{
+    justify-content: space-between;
+    padding: 6px 10px 0 10px;
+    border-bottom: 2px solid #80808024;
+
+    .activeTab{
+        border-color: lightgray lightgray rgba(0,0,0,0) lightgray;
+        background-color: #eeeeee;
+        border-top-left-radius: 10px ;
+        border-top-right-radius: 10px ;
+        color: black !important;
+    }
+
+    .headerList{
+        .tabhead{
+            padding: 15px 12px;
+            cursor: pointer;
+            color: blue;
+            margin-right: 3px;
+            transition: 0.2s;
+            &:hover{
+                border-color: lightgray lightgray rgba(0,0,0,0) lightgray;
+                background-color: #eeeeee;
+                border-top-left-radius: 10px ;
+                border-top-right-radius: 10px ;
+                color: black !important;
+            }
+        }
+    }
+
+    .endList{
+        padding: 7px 0;
+
+        .account{
+            position: relative;
+            .dropdownOpts{
+                position: absolute;
+                right: 0;
+                bottom: -35px;
+                opacity: 0;
+                transition: 0.3s;
+            }
+            &:hover .dropdownOpts{
+                opacity: 1;
+            }
+        }
+        .auto-fix{
+            align-items: center;
+            display: flex;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .boxColor{
+            padding: 10px 14px;
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.2s;
+            &:hover {
+                background-color: #24547e;
+            }
+        }
+
+        .fa-envelope{
+            font-size: 14px;
+        }
+
+    }
+}
+
+.boxBody{
+    display: flex;
+    max-height: 200px;
+    
+    .listFolder {
+        min-width: 120px;
+        padding: 15px 0;
+        background-color: #d5d5d5;
+
+        .folder{
+            padding: 2px 0;
+            padding-left: 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+    }
+}
+.activeFolder{
+    background-color: #24547e;
+    color: white;
+}

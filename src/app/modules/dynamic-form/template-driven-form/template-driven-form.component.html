@@ -1,0 +1,65 @@
+<div class="container mt-5  ">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <h3 class="text-center">Contact us</h3>
+                <hr>
+                <form name="form" #contactUs="ngForm" id="form1" novalidate>
+                    <div class="form-group">
+                        <div class="d-flex">
+                            <label for="name" >Name</label>
+                            <input type="text" class="form-control" name="name"  placeholder="Name" required
+                            #name="ngModel" [(ngModel)]="model.Name" [ngClass]="{ 'is-invalid': name.touched && name.invalid }" />
+                        </div>
+                        <div *ngIf="name.touched && name.invalid" class="error">
+                            <div *ngIf="name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="d-flex">
+                          <label for="email">Your E-mail</label>
+                          <input type="text" class="form-control" name="email" [(ngModel)]="model.lastName" placeholder="Your E-mail"
+                          #email="ngModel" [ngClass]="{ 'is-invalid': email.touched &&  email.invalid }" email required />
+                        </div>
+                        <div *ngIf="email.touched && email.invalid" class="error">
+                            <div *ngIf="email.errors.required">Email is required</div>
+                            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="d-flex"> 
+                            <label for="Phone">Your Phone</label>
+                            <input type="text" class="form-control" name="Phone" [(ngModel)]="model.Phone" placeholder="Your Phone"
+                            #Phone="ngModel" [ngClass]="{ 'is-invalid': Phone.touched &&  Phone.invalid }" required pattern="[0-9]+" 
+                            minlength="9"/>
+                        </div>
+                        <div *ngIf="Phone.touched && Phone.invalid" class="error">
+                            <div *ngIf="Phone.errors.required">Phone is required</div>
+                            <div *ngIf="Phone.errors.pattern">Phone only contain number</div>
+                            <div *ngIf="Phone.errors.minlength">Phone contain at least 9 number</div>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <div class="d-flex align-items-start">
+                            <label for="message">Your message</label>
+                            <textarea type="text" class="form-control" name="message" [(ngModel)]="model.message" 
+                            placeholder="please enter your message here..." 
+                            #message="ngModel" [ngClass]="{ 'is-invalid': message.touched && message.invalid }" required ></textarea>
+                        </div>
+                       
+                        <div *ngIf="message.touched && message.invalid" class="error">
+                            <div *ngIf="message.errors.required">message is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn float-right btn-primary" [disabled]="contactUs.form.invalid" 
+                        (click)="onSubmit()" >Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

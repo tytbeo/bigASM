@@ -16,6 +16,7 @@ export class ToDoListV1Component implements OnInit {
   todoText : String;
 
   addTodo(){
+    if(this.todoText == '')return;
     this.listTodo.push({
       text : this.todoText,
       done : false

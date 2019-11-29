@@ -1,3 +1,7 @@
+
+import { ItemTodoComponent } from './to-do-list-v2/item-todo/item-todo.component';
+import { ListTodoComponent } from './to-do-list-v2/list-todo/list-todo.component';
+import { InputComponent } from './to-do-list-v2/input/input.component';
 import { FormsModule } from '@angular/forms';
 import { ToDoListV2Component } from './to-do-list-v2/to-do-list-v2.component';
 import { CommonModule } from '@angular/common';
@@ -19,12 +23,15 @@ const routes: Routes = [
 @NgModule({
     declarations: [
         ToDoListV1Component,
-        ToDoListV2Component
+        ToDoListV2Component,
+        InputComponent,
+        ListTodoComponent, 
+        ItemTodoComponent
     ],
     imports: [
-        RouterModule.forChild(routes),
         CommonModule,
         FormsModule,
+        RouterModule.forChild(routes),
     ],
     exports: [RouterModule]
 })

@@ -1,0 +1,28 @@
+<div id="mailList">
+  <div >
+    <div class="senderCol">
+      <div class="head">Sender</div>
+    </div>
+    <div class="subjectCol">
+      <div class="head">Subject</div>
+    </div>
+    <div class="dateCol">
+      <div class="head">Date</div>
+    </div>
+  </div>
+  
+  <div class="colCustom" [class.activeMess]="idPost==mess._id" routerLink="/mail/{{folderName}}/{{mess._id}}"
+  *ngFor="let mess of (mailList?.length ? (mailList | orderBy:'date') : []) ; index as i">
+      <div class="senderCol">
+        <p class="tdClass"> {{mess?.from}} </p>
+      </div>
+      <div class="subjectCol">
+        <p class="tdClass">{{mess?.subject}}</p>
+      </div>
+      <div class="dateCol">
+        <p class="tdClass">{{mess?.date | date:"yyyy-MM-dd"}}</p>
+      </div>
+  </div>
+ 
+
+</div>

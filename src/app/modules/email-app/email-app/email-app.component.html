@@ -1,0 +1,39 @@
+<div class="d-flex headerMailApp">
+  <div class="headerList d-flex">
+    <div class="tabhead" [class.activeTab]="tabChoosed==1" (click)="tabChoosed=1" > Messages </div>
+    <div class="tabhead" [class.activeTab]="tabChoosed==2" (click)="tabChoosed=2"> Contacts </div>
+    <div class="tabhead" [class.activeTab]="tabChoosed==3" (click)="tabChoosed=3"> Preferences </div>
+  </div>
+  <div class="endList d-flex">
+    <div class="account auto-fix mr-3">
+      {{mailSer.userData}} <i class="fas fa-caret-down ml-2"></i>
+      <div class="dropdownOpts">
+        <div class="btn btn-danger" (click)="logOuttt()" > Log out </div>
+      </div>
+    </div>
+    <div class="auto-fix boxColor">
+      <i class="homeBtn fas fa-home"></i>
+    </div>
+    <div class="newMessageBtn auto-fix boxColor">
+      <i class="fas fa-envelope mr-2"></i>
+      New message
+    </div>
+  </div>
+</div>
+<div class="boxBody">
+  <div class="listFolder">
+    <div class="folder" *ngFor="let folder of forderList" [class.activeFolder]="folder==folderChoosed" routerLink="/mail/{{folder}}" >
+      <span [ngSwitch]="folder==folderChoosed">
+          <i class="far fa-folder" *ngSwitchDefault></i>
+          <i class="far fa-folder-open" *ngSwitchCase='true'></i>
+      </span>
+      {{folder}}
+    </div>
+  </div>
+  <div class="mailList w-100" *ngIf="folderChoosed">
+    <app-list-mail [folderName]="folderChoosed" [idPost]="idPost" ></app-list-mail>
+  </div>
+</div>
+<div class="" *ngIf="idPost">
+  <app-mail-detail [idPost]="idPost" ></app-mail-detail>
+</div>

@@ -12,4 +12,10 @@ export class ToDoListV2Component implements OnInit {
   ngOnInit() {
   }
 
+  listTodo = [];
+
+  addTodo(data){
+    this.listTodo.push(data);
+  }
+  
 }

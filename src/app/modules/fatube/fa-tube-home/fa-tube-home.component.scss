@@ -1,0 +1,112 @@
+#tube {
+  position: relative;
+
+  .setting-btn {
+    font-size: 2rem;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  .fillerOpts {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .mat-form-field {
+      background-color: #000000;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .form-to{
+        width: 100%;
+        margin-left: 1rem;
+        display: flex;
+        justify-content: flex-end;
+
+        .opt{
+            font-size: 22px;
+            font-weight: bold;
+
+        }
+    }
+    .dateForm{
+        width: 40%; 
+        min-width: 150px;
+        margin-left: 10px;
+    }
+  }
+
+  .listSearch{
+    border-radius: 10px;
+    padding: 20px 10px;
+    background-color: #f3f3f3;
+
+  }
+
+  .oneVid{
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #cccccc;
+    .containImg {
+      margin-right: 1rem;
+      img{
+        border-radius: 5px;
+        width: 350px;
+        height: 250px;
+        object-fit: cover;
+      }
+    }
+
+    .info{
+      position: relative;
+      h3{
+        font-size: 1.7rem;
+      }
+      p{
+        color: #5e5e5e;
+      }
+      span{
+        margin-left: 8px;
+      }
+      .OpenVid{
+        cursor: pointer;
+        color: black;
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+
+        &:hover{
+          color: #007bff;
+        }
+      }
+    }
+    
+  }
+  .spinn {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.inputSetting{
+  margin: 20px;
+}
+
+.modal-body {
+  padding: 0 !important;
+}
+.modal.show .modal-dialog {
+  margin-top: 15%;
+}
+@media (min-width: 992px){
+  .modal-dialog {
+    max-width: 800px !important;
+  }
+}

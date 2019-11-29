@@ -1,0 +1,27 @@
+<div id="detail">
+  <div class="headDetail">
+    <div class="left">
+      <h4>{{mailDetail?.subject}}</h4>
+      <p> {{mailDetail?.from}} -> {{mailDetail?.to}} </p>
+    </div>
+    <div class="right">
+      <div class="date mb-1"> {{mailDetail?.date | date:"MMMM d, y h:mm:ss a" }} </div>
+      <div class="optionsBox d-flex">
+        <div class="rep buttonOpts">
+          <i class="fas fa-reply"></i>
+          Reply
+        </div>
+        <div class="forward buttonOpts">
+          <i class="fas fa-forward"></i>
+          Forward
+        </div>
+        <div class="del buttonOpts">
+          <i class="fas fa-times"></i>
+          Delete
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bodyDetail" [innerHTML]="mailDetail?.body" >
+  </div>
+</div>

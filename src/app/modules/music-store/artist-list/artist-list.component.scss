@@ -1,0 +1,64 @@
+#listArt{
+    .keyWord{
+        margin: auto;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .border{
+        border-radius: 8px;
+        border: 1px solid #b1b1b1;
+        display: flex;
+        position: relative;
+        box-shadow: 2px 4px 7px 1px #cdcdcd;
+        &::before{
+            content: "see top-tracks 🔎";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: 0.1s;
+            cursor: pointer;
+            background-color: #ececec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 26px;
+        }
+
+        &:hover::before {
+            opacity: 0.8;
+        }
+    }
+    .oneArtist{
+        padding: 30px 10px;
+        .avt{
+            margin-right: 15px;
+        }
+        img{
+            width: 160px;
+            height: 200px;
+            min-width: 160px;
+            min-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #b1b1b1;
+        }
+        .info{
+            font-size: 14px;
+            padding-top: 10px;
+            font-weight: 500;
+        }
+        .details{
+            margin-bottom: 5px;
+        }
+
+    }
+    
+}

@@ -1,0 +1,44 @@
+#mailList{
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    padding-top: 3px;
+    overflow-x: hidden;
+
+    .colCustom{
+        cursor: pointer;
+        &:hover {
+            background-color: #24547e;
+            color: white;
+        }
+    }
+    .activeMess{
+        background-color: #24547e;
+        color: white;
+    }
+    .senderCol{
+        width: 30%;
+        display: inline-block;
+    }
+    .subjectCol{
+        width: 50%;
+        display: inline-block;
+    }
+    .dateCol{
+        display: inline-block;
+        width: 20%;
+    }
+    .head{
+        font-weight: bold;
+        padding-left: 2rem;  
+        margin-bottom: 6px;
+    }
+    .tdClass{
+        padding-left: 2rem;
+        font-size: 14px;
+        height: 20px;
+        margin: 0;
+        padding-top: 3px;
+        overflow: hidden;
+    }
+}

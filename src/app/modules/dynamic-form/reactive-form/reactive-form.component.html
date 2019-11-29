@@ -1,0 +1,70 @@
+<div class="container mt-5  ">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <h3 class="text-center">Contact us</h3>
+                <hr>
+                <form name="form" [formGroup]="contactUs" id="form1">
+                    <div class="form-group">
+                        <div class="d-flex">
+                            <label for="name" >Name</label>
+                            <input type="text" class="form-control" formControlName="name"  placeholder="Name" required
+                            [ngClass]="{ 'is-invalid': form.name.touched && form.name.invalid }" />
+                        </div>
+                        <div *ngIf="form.name?.touched || submited" class="error">
+                            <div *ngIf="form.name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+
+                    <div formArrayName="emails" class="form-group" *ngFor="let email of form.emails?.controls;let i = index" >
+                        <div class="d-flex">
+                            <label [for]="i" >{{ i == 0 ? 'Your E-mail' : ''}}</label>
+                            <input type="text" class="form-control" placeholder="Your E-mail"
+                            [ngClass]="{ 'is-invalid':email.touched && email.invalid }" [formControlName]="i" />
+                            <div class="containIcon">
+                                <i class="fas fa-plus-square" *ngIf="i==0" (click)=" addEmail() "></i>
+                            </div>
+                        </div>
+                        <div *ngIf="email.touched || submited" class="error">
+                            <div *ngIf="email.errors.required">Email is required</div>
+                            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" formArrayName="phones" *ngFor="let phone of form.phones?.controls;let i = index">
+                        <div class="d-flex"> 
+                            <label [for]="i">{{ i == 0 ? 'Your Phone' : ''}}</label>
+                            <input type="text" class="form-control" [formControlName]="i" placeholder="Your Phone"
+                            [ngClass]="{ 'is-invalid': phone.touched &&  phone.invalid }"/>
+                            <div class="containIcon">
+                                <i class="fas fa-plus-square" *ngIf="i==0" (click)=" addPhone() "></i>
+                            </div>
+                        </div>
+                        <div *ngIf="phone.touched || submited" class="error">
+                            <div *ngIf="phone.errors.required">Phone is required</div>
+                            <div *ngIf="phone.errors.pattern">Phone only contain number</div>
+                            <div *ngIf="phone.errors.minlength">Phone contain at least 9 number</div>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <div class="d-flex align-items-start">
+                            <label for="message">Your message</label>
+                            <textarea type="text" class="form-control" formControlName="message" 
+                            placeholder="please enter your message here..." 
+                            [ngClass]="{ 'is-invalid': form.message.touched && form.message.invalid }" ></textarea>
+                        </div>
+                       
+                        <div *ngIf="form.message.touched || submited" class="error">
+                            <div *ngIf="form.message.errors.required">message is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn float-right btn-primary"
+                        (click)="submitdata()" >Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

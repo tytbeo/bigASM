@@ -1,0 +1,20 @@
+<div id="listArt">
+  <div class="keyWord">Result of key word: {{key}} </div>
+  <div class="noFound keyWord" *ngIf="artistList.length==0">No artist found</div>
+  <div class="row">
+    <div class="oneArtist col-lg-4 col-md-6 col-sm-12" *ngFor="let artist of artistList">
+      <div class="border" routerLink="/music-store/{{key}}/{{artist.id}} ">
+        <div class="avt">
+          <img [src]="(artist.images[0] || artist.images[1] )?.url" alt="">
+        </div>
+        <div class="info">
+          <div class="details"> Name:  {{artist.name}} </div>
+          <div class="details"> Genres:  {{artist.genres.join(',  ') || 'updating...'}} </div>
+          <div class="details"> Followers:  {{artist.followers.total}} </div>
+          <div class="details"> Popularity:  {{artist.popularity}} </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

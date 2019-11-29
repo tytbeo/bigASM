@@ -1,0 +1,34 @@
+.oneTodo{
+    min-width: 250px;
+    border-radius: 4px;
+    border: 1px solid #8b8bf1;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    display: inline-flex;
+    cursor: pointer;
+    background-color: #b2b2ff38;
+    justify-content: space-between;
+    transition: 0.2s;
+    margin-bottom: 10px;
+
+    &:hover{
+        background-color: #4a4aec47;
+    }
+
+    .remove {
+        line-height: 40px;
+        font-size: 22px;
+        width: 30px;
+        text-align: center;
+    }
+}
+
+.todoDone{
+    border: 1px solid #51f2a4c7 !important;
+    background-color: #c3ffc43b !important;
+    
+    &:hover{
+        background-color: #c3ffc48f !important;
+    }
+}
