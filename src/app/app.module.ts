@@ -1,3 +1,4 @@
+import { NgNotDirective } from './Directives/ng-not.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     HeaderComponent,
+    NgNotDirective
   ],
   imports: [
     BrowserModule,
